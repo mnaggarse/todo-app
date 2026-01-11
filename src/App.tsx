@@ -126,7 +126,7 @@ export default function App() {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="mx-auto mt-4 pb-0">
+              <ModalHeader className="mx-auto mt-4 text-center">
                 Are you sure you want to delete this task?
               </ModalHeader>
               <ModalBody className="text-center">
