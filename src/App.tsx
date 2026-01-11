@@ -16,6 +16,7 @@ import {
   TableColumn,
   TableHeader,
   TableRow,
+  type Selection,
 } from "@heroui/table";
 import { addToast } from "@heroui/toast";
 import type React from "react";
@@ -29,7 +30,7 @@ export default function App() {
     const storedTasks = localStorage.getItem("tasks");
     return storedTasks ? JSON.parse(storedTasks) : [];
   });
-  const [selectedKeys, setSelectedKeys] = useState(() => {
+  const [selectedKeys, setSelectedKeys] = useState<Selection>(() => {
     const storedCompleted = localStorage.getItem("completed");
     return storedCompleted ? new Set(JSON.parse(storedCompleted)) : new Set();
   });
@@ -117,7 +118,7 @@ export default function App() {
   return (
     <>
       <Modal
-        className="max-w-[90%]"
+        className="max-w-[90%] md:w-md"
         isOpen={isOpen}
         onOpenChange={onOpenChange}
         placement="center"
