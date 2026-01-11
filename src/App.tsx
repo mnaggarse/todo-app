@@ -55,15 +55,15 @@ export default function App() {
       });
     } else {
       setTasks((prevTasks) => [
-        ...prevTasks,
         {
           id: Date.now(),
           title: title.trim(),
           completed: false,
-          createdAt: `${date.getDate()}/${
+          createdAt: `${date.getHours()}:${date.getMinutes()}:${date.getSeconds()} - ${date.getDate()}/${
             date.getMonth() + 1
           }/${date.getFullYear()}`,
         },
+        ...prevTasks,
       ]);
       setTitle("");
     }
