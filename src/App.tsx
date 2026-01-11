@@ -182,7 +182,7 @@ export default function App() {
               <TableColumn key={column.key}>{column.label}</TableColumn>
             )}
           </TableHeader>
-          <TableBody items={tasks}>
+          <TableBody items={tasks} emptyContent="No tasks yet!">
             {(item) => (
               <TableRow key={item.id}>
                 {(columnKey) => (
